@@ -20,12 +20,13 @@
 \usepackage{subcaption}
 \usepackage{multicol}
 \usepackage[usenames,dvipsnames]{xcolor}
-
+\usepackage{caption}
 % \usepackage{cmbright}
 
 
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 \usepackage{mathrsfs}
+\usepackage[scr=rsfs,cal=boondox]{mathalfa}
 \usepackage{cancel}
 \usepackage{bm}
 \newcommand\N{\ensuremath{\mathbb{N}}}
@@ -247,13 +248,13 @@
 \fancyhead[RO,LE]{\@lesson}
 \fancyhead[RE,LO]{}
 \fancyfoot[LE,RO]{\thepage}
-\fancyfoot[C]{\leftmark}
+\fancyfoot[C]{}
 
 \makeatother
 
 
-
-
+\usepackage{hyperref}
+\usepackage{url}
 % notes
 \usepackage{todonotes}
 \usepackage{tcolorbox}
@@ -291,11 +292,8 @@
     \import{./figures/}{#1.pdf_tex}
 }
 
-
-\usepackage{wrapfig}
-
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
 
 % preamble by Gilles Castel: https://castel.dev/
-\author{Blabby}
+\author{Amir Murshed}

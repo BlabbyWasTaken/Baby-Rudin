@@ -1,64 +1,52 @@
-\section{Extensions of $\R$: the Complex Numbers \C}
-
+\section{Construction of $\mathbb{R}$}
 \begin{definition}
-	\emph{The Extended Reals}: $\overline{\R}:=\{-\infty ,\infty\}\cup \R$ , with the usual order on $\R$, with $-\infty <x<\infty$, for all $x\in\R$, such that: 
-    
+	The \emph{supremum} $\sup(S)=\alpha\in A$ of a set $S \subset A$ is an upper bound of $S$, where for $\beta < \alpha$, $\beta$ is not an upper bound for $S$.
+\end{definition}
+\begin{eg}
+	Consider $\Q^-$; let $\sup\Q^-=\gamma < 0$ But there exists $ \frac{\gamma}{2}<0$, so $\gamma\neq\sup\Q^-$. It follows that $\sup\Q^-=0$.
+\end{eg}
+\begin{definition}
+    A set $S$ has the \emph{least upper bound property}, or \emph{satisfies the Completeness Axiom}, if every non-empty subset of $S$ with an upper-bound also has a supremum.
+\end{definition}
+\begin{definition}
+	A \emph{Dedekind Cut} $\alpha$ is a subset of $\Q$ satisfying:
     \begin{enumerate}
-	    \item $x\pm \infty = \pm \infty$
-        \item $x\cdot\infty = \pm\infty$
-        \item $\frac{x}{\infty}=0$
-
-
-	\end{enumerate}
-    And so forth.
-    \end{definition}
-    
-This set shares many features with the real numbers, but it is important to note that it itself is not an ordered field. The reason that we care about the extended reals, then, is that \emph{every $A\subset \overline{\R}$ has a supremum.}
-
+        \item $\alpha \neq \emptyset,\Q$.
+        \item If $p\in\alpha$, and $p>q\in \Q$, then $q\in \alpha$ (closed downwards).
+        \item If $p\in \alpha$ then $p<r$ for some $r\in\alpha$.
+    \end{enumerate}
+\end{definition}
+These cuts are essentially \emph{rays} on the rationals pointing towards the negative direction, $(-\infty, p)$ for $p\in \Q$.
+\begin{eg}
+	The set $\Q^-$ is trivially closed downwards, and has no largest member, so it is therefore a Dedekind cut.
+\end{eg}
 \begin{definition}
-	\emph{Euclidean Space:} $\R^k := \{(x_1,x_2,...,x_n):x_i \in \R\}$, such that $(x_1,...,x_n)+(y_1,...,y_n)=(x_1+y_1,...,x_n+y_n)$.  
+	The \emph{set of all real numbers}, $\R$, is defined as the set $\R:=\{\alpha \subset \Q:\alpha \text{ is a Dedekind cut}\}$, where:
+    \begin{enumerate}
+        \item $\alpha < \beta$ if $\alpha \subset \beta$.
+        \item $\alpha + \beta := \{r+s: r\in\alpha \text{ and } s\in\beta\}$
+        \item If $\alpha, \beta \in \R^+$, then $\alpha\beta := \{p:p<rs \text{ for } r,s>0, r\in\alpha, s\in\beta\}$.
+    \end{enumerate}
 \end{definition}
-
-This set also is often useful, despite not being an ordered field. A special case of Euclidean space is the vector space, which we develop in the following:
-
-\begin{definition} \emph{Vector Space Properties}:
-	\begin{enumerate}
-	    \item \emph{Scalar Multiplication}: $\alpha(x_1,...,x_n)=\alpha\mathbf{x}=(\alpha x_1, ..., \alpha x_n)$
-        \item \emph{Dot Product}: $\mathbf{x} \cdot \mathbf{y} = \sum ^k_i x_iy_i$
-        \item \emph{Norms}: $|\mathbf{x}|:=\sqrt{x_1 + ... + x_n}$
-	\end{enumerate}
-  
-\end{definition}
-\begin{figure}
+\begin{eg}
+		The real number $\sqrt{2}$ is defined as $\alpha = \{x\in \Q : x^2 < 2\}$.
+        \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\linewidth]{norm.pdf}
-    \caption{A 2-tuple in Euclidean 2-space represented on the plane.}
+    \includegraphics[width=1\linewidth]{figures/sqrt2cut.pdf}
+    \caption{The Dedekind Cut corresponding to $\sqrt{2}$}
     \label{fig:enter-label}
 \end{figure}
-
-
-
-One can see that the concept of a norm is analogous to that of Euclidean distance, with the norm acting as a generalization of the Pythagorean theorem.
-
-\begin{definition}
-    \emph{The Complex Number Field $\C$}: For $(a,b)\in \R^2$, let: \begin{enumerate}
-        \item $(a,b)+(c,d) = (a+b ,  c+d)$
-        \item $(a,b)\cdot (c,d) = (ac-bd,ad+bc)$
-        \item $(0,0)$ and $(1,0)$ are the additive and multiplicative identities, respectively
-        \item $(0,1)=i$
-        \item For $z=a+bi\in \C$, $\overline{z}=a-bi$
-        \end{enumerate}
-\end{definition}
-
-$\C$ is a natural extension of $\R$ (i.e., $\{a+0i:a\in \R\}$ is isomorphic to $\R$). Note: $(0,1)\cdot(0,1)=(-1,0)$, so $i^2 = -1$.
-
-\begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\linewidth]{imag(ab)plane.pdf}
-        \caption{A planar representation of $z=(a,b)\in \C$.}
-        \label{fig:enter-label}
-    \end{figure}
+\end{eg}
 
 \begin{theorem}
-	\emph{The Cauchy-Shawrz Inequality}: If $a_1,...,a_n$ and $b_1,...,b_n$ are complex numbers, then $$\left|\sum^n_{i=0} a_i\overline{b_i}\right|^2 \leq \sum^n_{i=0}|a_i|^2 \cdot \sum^n_{i=0}|b_i|^2$$ will hold.
+	$\R$ is an ordered field.
 \end{theorem}
+\begin{proof}
+	 \begin{enumerate}
+	     \item $\alpha + \beta := \{r+s: r\in\alpha \text{ and } s\in\beta\}=\beta + \alpha := \{s+r: r\in\alpha \text{ and } s\in\beta\}$, because $\Q$ is a field (and therefore commutative). So, addition in $\R$ commutes.
+        \item For $\gamma$ a Dedekind cut, $(\alpha + \beta)+\gamma = \{(s+r)+t: r\in\alpha, s\in\beta\ \text{ and } t\in\gamma\}=\{s+(r+t): r\in\alpha, s\in\beta\ \text{ and } t\in\gamma\} = \alpha + (\beta + 
+    \gamma)$ because $\Q$ is a field (and therefore associative). So, addition in $\R$ is associative.
+    \item Let $\Q^- =: 0_\R \in\R$. $0_\R + \alpha = \{s+0: s\in\alpha\}= \{s: s\in\alpha\} = \alpha$, so $0_\R$ is an additive identity.
+	 \end{enumerate}  \hfill\break
+   The remainder of the proof can be found in Baby Rudin.
+\end{proof}
